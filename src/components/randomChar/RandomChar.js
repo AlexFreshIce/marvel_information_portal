@@ -35,9 +35,11 @@ const RandomChar = (props) => {
     const content = !(loading || error || !char) ? <View char={char}  /> : null
     return (
         <div className="randomchar">
+             <div className="randomchar__block">
             {errorMessage}
             {spinner}
             {content}
+             </div>
             <div className="randomchar__static">
                 <p className="randomchar__title">
                     Random character for today!<br />
@@ -64,7 +66,9 @@ const View = ({ char }) => {
     }
 
     return (
-        <div className="randomchar__block">
+        <>
+       
+        {/* <div className="randomchar__block"> */}
             <img src={thumbnail} alt="Random character" className="randomchar__img" style={imgStyle} />
             <div className="randomchar__info">
                 <p className="randomchar__name" tabIndex={0}>{name} </p>
@@ -80,7 +84,8 @@ const View = ({ char }) => {
                     </a>
                 </div>
             </div>
-        </div>
+        {/* </div> */}
+        </>
     )
 }
 

@@ -93,3 +93,11 @@
     filter: grayscale(0.5);
   }
 }
+
+@media screen and (max-width: 530px) {
+  .button {
+    &__long {
+      width: fit-content;
+    }
+  }
+}

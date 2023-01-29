@@ -54,7 +54,7 @@ const View = ({ char }) => {
     const finalDescription = description ? description : nullDescription
     const comicsList = []
     for (let i = 0; i < comics.length; i++) {
-        if (i > 10) break
+        if (i >= 6) break
         const comicID = comics[i].resourceURI.split('/').slice(-1)
         const elem = <li key={i} className="char__comics-item" tabIndex={0}>
              <Link to={`/comics/${comicID}`}>
