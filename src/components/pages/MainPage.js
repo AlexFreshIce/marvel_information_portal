@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 import CharInfo from "../charInfo/CharInfo";
 import CharList from "../charList/CharList";
@@ -9,9 +9,11 @@ import decoration from '../../resources/img/vision.png';
 
 const MainPage = () => {
   const [selectedChar, setSelectedChar] = useState(null)
-    const onCharSelected = (id) => {
-        setSelectedChar(id)
-    }
+
+  const onCharSelected = useCallback((id) => {
+    setSelectedChar(id)
+  }, [])
+
   return (
     <>
       <ErrorBoundary>

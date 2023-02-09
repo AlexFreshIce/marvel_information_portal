@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+
 import './singleComicPage.scss';
 
 import { useState, useEffect } from 'react';
@@ -18,6 +20,7 @@ const SingleComicPage = () => {
 
     useEffect(() => {
         updateComic()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [comicId])
 
     const updateComic = () => {
@@ -64,7 +67,7 @@ const View = ({ comic }) => {
                 <p className="single-comic__descr">Language: {language}</p>
                 <div className="single-comic__price">{price}</div>
             </div>
-            <a href="#" onClick={goBackHandler}  className="single-comic__back">Go back</a>
+            <a href="#" onClick={goBackHandler} className="single-comic__back">Go back</a>
         </div>
     )
 }

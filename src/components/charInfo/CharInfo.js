@@ -16,6 +16,7 @@ const CharInfo = (props) => {
 
     useEffect(() => {
         updateChar()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [props.charId])
 
     const updateChar = () => {
@@ -64,9 +65,9 @@ const View = ({ char }) => {
         comicsList.push(elem)
     }
 
-    let imgStyle = { 'objectFit': 'cover' };
+    let imgStyle = { 'objectPosition': 'center center'  };
     if (thumbnail === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
-        imgStyle = { 'objectFit': 'contain' };
+        imgStyle = { 'objectPosition': 'left bottom'  };
     }
     return (
         <>
