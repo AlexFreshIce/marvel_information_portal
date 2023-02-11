@@ -3,6 +3,7 @@ import { useState, useCallback } from "react";
 import CharInfo from "../charInfo/CharInfo";
 import CharList from "../charList/CharList";
 import RandomChar from "../randomChar/RandomChar";
+import CharSearchForm from "../charSearchForm/CharSearchForm";
 import ErrorBoundary from "../errorBoundary/ErrorBoundary";
 
 import decoration from '../../resources/img/vision.png';
@@ -22,6 +23,9 @@ const MainPage = () => {
       <div className="char__content">
         <ErrorBoundary>
           <CharList onCharSelected={onCharSelected} />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <CharSearchForm />
         </ErrorBoundary>
         <ErrorBoundary>
           <CharInfo charId={selectedChar} />

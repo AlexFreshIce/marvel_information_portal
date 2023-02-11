@@ -1,21 +1,17 @@
-@import "../../style/variables.scss";
+@import "../../../style/variables.scss";
 
 .single-comic {
   margin-top: 50px;
-  // display: grid;
-  // grid-template-columns: 293px 550px auto;
-  // column-gap: 50px;
-  // align-items: start;
   display: flex;
   justify-content: center;
+  &__info {
+    flex-grow: 1;
+  }
   &__img {
     display: block;
     width: 293px;
     height: 450px;
     margin-right: 20px;
-  }
-  &__info {
-    flex-grow: 1;
   }
   &__name {
     font-weight: bold;
@@ -49,10 +45,8 @@
 
 @media screen and (max-width: 720px) {
   .single-comic {
-    // flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
-
     &__info {
       order: 1;
       margin-top: 20px;

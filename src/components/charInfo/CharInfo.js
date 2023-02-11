@@ -16,7 +16,7 @@ const CharInfo = (props) => {
 
     useEffect(() => {
         updateChar()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [props.charId])
 
     const updateChar = () => {
@@ -51,24 +51,23 @@ const CharInfo = (props) => {
 
 const View = ({ char }) => {
     const { name, description, thumbnail, homepage, wiki, comics } = char;
-    const nullDescription = 'Classified information'
-    const finalDescription = description ? description : nullDescription
     const comicsList = []
     for (let i = 0; i < comics.length; i++) {
         if (i >= 6) break
         const comicID = comics[i].resourceURI.split('/').slice(-1)
         const elem = <li key={i} className="char__comics-item" tabIndex={0}>
-             <Link to={`/comics/${comicID}`}>
-            {comics[i].name}
+            <Link to={`/comics/${comicID}`}>
+                {comics[i].name}
             </Link>
         </li>
         comicsList.push(elem)
     }
 
-    let imgStyle = { 'objectPosition': 'center center'  };
+    let imgStyle = { 'objectPosition': 'center center' };
     if (thumbnail === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
-        imgStyle = { 'objectPosition': 'left bottom'  };
+        imgStyle = { 'objectPosition': 'left bottom' };
     }
+    
     return (
         <>
             <div className="char__basics">
@@ -86,7 +85,7 @@ const View = ({ char }) => {
                 </div>
             </div>
             <div className="char__descr" tabIndex={0}>
-                {finalDescription}
+            {description}
             </div>
             <div className="char__comics" tabIndex={0}>Comics:</div>
             <ul className="char__comics-list">

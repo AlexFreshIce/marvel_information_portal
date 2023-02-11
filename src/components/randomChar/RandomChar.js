@@ -17,15 +17,15 @@ const RandomChar = (props) => {
         return () => {
             clearInterval(timerId)
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
-    
+
     const onCharLoaded = (char) => {
         setChar(char);
     }
 
     const updateChar = () => {
-       clearError()
+        clearError()
         const id = Math.floor(Math.random() * (1011400 - 1011000)) + 1011000;
         getCharacter(id)
             .then(onCharLoaded)
@@ -33,14 +33,14 @@ const RandomChar = (props) => {
 
     const errorMessage = error ? <ErrorMessage /> : null;
     const spinner = loading ? <Spinner /> : null;
-    const content = !(loading || error || !char) ? <View char={char}  /> : null
+    const content = !(loading || error || !char) ? <View char={char} /> : null
     return (
         <div className="randomchar">
-             <div className="randomchar__block">
-            {errorMessage}
-            {spinner}
-            {content}
-             </div>
+            <div className="randomchar__block">
+                {errorMessage}
+                {spinner}
+                {content}
+            </div>
             <div className="randomchar__static">
                 <p className="randomchar__title">
                     Random character for today!<br />
@@ -61,20 +61,19 @@ const RandomChar = (props) => {
 
 const View = ({ char }) => {
     const { name, description, thumbnail, homepage, wiki } = char;
-    let imgStyle = {  'objectPosition': 'center center' };
+    let imgStyle = { 'objectPosition': 'center center' };
     if (thumbnail === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
         imgStyle = { 'objectPosition': 'left bottom' };
     }
-
+    const limitDescription = description.length > 190 ? `${description.slice(0, 185)} ...` : description;
+    
     return (
         <>
-       
-        {/* <div className="randomchar__block"> */}
-            <img src={thumbnail} alt="Random character" className="randomchar__img" style={imgStyle}/>
+            <img src={thumbnail} alt="Random character" className="randomchar__img" style={imgStyle} />
             <div className="randomchar__info">
                 <p className="randomchar__name" tabIndex={0}>{name} </p>
                 <p className="randomchar__descr " tabIndex={0}>
-                    {description}
+                    {limitDescription}
                 </p>
                 <div className="randomchar__btns">
                     <a href={homepage} className="button button__main">
@@ -85,7 +84,6 @@ const View = ({ char }) => {
                     </a>
                 </div>
             </div>
-        {/* </div> */}
         </>
     )
 }

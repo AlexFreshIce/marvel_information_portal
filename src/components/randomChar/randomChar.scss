@@ -86,22 +86,7 @@
 @media screen and (max-width: 950px) {
   .randomchar {
     grid-template-columns: auto;
-
-    // grid-template-rows: minmax(220px, auto) auto;
     grid-template-rows: 1fr 1fr;
-    // &__block {
-    //   padding: 20px;
-    //   min-height: 240px;
-    // }
-    // &__info {
-    //   grid-template-rows: auto;
-    // }
-    // &__static {
-    //   padding: 20px;
-    // }
-    // &__btns {
-    //   align-self: flex-start;
-    // }
   }
 }
 

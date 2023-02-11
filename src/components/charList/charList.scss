@@ -5,9 +5,13 @@
     margin-top: 50px;
     display: grid;
     grid-template-columns: minmax(200px, 650px) minmax(260px, 420px);
+    grid-template-rows: auto auto;
     // grid-template-columns: 650px 425px;
     column-gap: 20px;
     // align-items: start;
+  }
+  &__list {
+    grid-row: 1/4;
   }
   &__grid {
     display: grid;
@@ -32,6 +36,9 @@
     }
     &_selected {
       box-shadow: 0 5px 20px $main-color;
+      transform: translateY(-8px);
+    }
+    &:hover {
       transform: translateY(-8px);
     }
   }
